@@ -1,0 +1,72 @@
+#area-input{
+    justify-content: center;
+    display: flex;
+    margin: 20px;
+}
+
+#pesquisa-input{
+    width: 80%;
+    border-radius: 20px;
+    border: 1px solid;
+    height: 40px;
+    padding-left: 10px;
+    background-color: #ebebe0;
+}
+
+#conj-card{
+    margin: 10px;
+    display: inline-flex;
+}
+
+.setor-card{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    margin: 20px;
+    background-color: #000;
+}
+
+mat-card-title, mat-card-subtitle{
+    color: #fff;
+    margin: 0;
+    padding: 15px 0;
+    border-bottom: 2px solid #fff;
+}
+
+mat-card-subtitle{
+    border-bottom: solid #fff;
+}
+
+mat-card-content{
+    margin-top: 30px;
+}
+
+
+/*min-height: 10em;
+display: table-cell;
+vertical-align: middle;*/
+
+@media screen and (max-width: 480px){
+    #conj-card{
+        margin: 10px;
+        display: grid;
+        justify-content: center;
+    }
+
+    .setor-card{
+        width: 250px;
+        height: 170px;
+    }
+
+    mat-card-title, mat-card-content h1{
+        font-size: 20px;
+    }
+
+    mat-card-content{
+        margin-top: 10px;
+    }
+    
+    mat-card-subtitle, mat-card-content h3{
+        font-size: 14px;        
+    }
+}
