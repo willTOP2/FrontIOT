@@ -8,6 +8,7 @@ import { HomeModule } from './modules/home/home.module';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MaterialModule } from './material.module';
     }),
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule, 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent] 

@@ -1,35 +1,28 @@
+
+     
 <app-header></app-header>
 
-<div id="area-input">
+<div     id="area-input">
 
-        <input id="pesquisa-input" matInput type="text" [(ngModel)]="value" placeholder="Pesquisar">
+        <input id="pesquisa-input" matInput type="text" 
+      [(ngModel)]="value" (input)="search($event)"  placeholder="Pesquisar">
         <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
             <mat-icon>close</mat-icon>
         </button>
-    <p>{{value}}</p>
+    <p></p>
 </div>
-
+<ng-template  ngFor let-temp [ngForOf]="getAllTemp">
 <div id="conj-card">
-    <mat-card class="setor-card">
-        <mat-card-title>Copa</mat-card-title>
-        <mat-card-content style="color: #b4fa52">
-            <h1>22,5º</h1>
+     
+
+    <mat-card   class="setor-card"> 
+
+        <mat-card-title><h1>{{temp.nome}}</h1></mat-card-title>
+        <mat-card-content  style="color: #b4fa52">
+            <h1>{{temp.temp}}º</h1>
             <h3>Normal</h3>
         </mat-card-content>
     </mat-card>
-    <mat-card class="setor-card">
-        <mat-card-title>Data Center</mat-card-title>
-        <mat-card-content style="color: #ff4d4d;">
-            <h1>30,5º</h1>
-            <h3>Alta!<br>Verificar local!</h3>
-        </mat-card-content>
-    </mat-card>
-    <mat-card class="setor-card">
-        <mat-card-title>Sala Técnica</mat-card-title>
-        <mat-card-content style="color: #80dfff;">
-            <h1>17º</h1>
-            <h3>Baixa!<br>Verificar local!</h3>
-        </mat-card-content>
-    </mat-card>
+   
     </div>
-
+</ng-template>
