@@ -8,10 +8,20 @@ import { SetoresComponent } from './modules/home/pages/setores/setores.component
 import { AppComponent } from './app.component';
 
 const routes: Routes = [  
-  {path: '', component: MonitoracaoComponent},
-  {path: 'login', component: LoginComponent},
+  {path: 'home', component: MonitoracaoComponent, title:'Home'},
+  {path: 'login', component: LoginComponent, title: 'Login'},
   {path: 'notificacao', component: NotificacaoComponent},
-  {path: 'setores', component: SetoresComponent}
+  {path: 'setores', component: SetoresComponent}, 
+  {
+    path: '', 
+    loadChildren: () => import('./core/components/auth/auth.module') 
+     .then(m => m.AuthModule)
+  },
+  {
+    path: 'admin', 
+    loadChildren: () => import('./components/admin/admin.module') 
+     .then(m => m.AdminModule)
+  }
 ];
 
 @NgModule({

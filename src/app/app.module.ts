@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; 
 @NgModule({
   declarations: [
     AppComponent
@@ -24,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
       registrationStrategy: 'registerWhenStable:30000'
     }),
     AppRoutingModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule, 
+    MatProgressSpinnerModule,
     MaterialModule, 
     HttpClientModule
   ],
