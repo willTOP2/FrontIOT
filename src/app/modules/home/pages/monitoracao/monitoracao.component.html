@@ -1,19 +1,21 @@
 <app-header></app-header>
-<div id="area-input">
 
+<div id="area-input">
+  <mat-spinner class="load" *ngIf="this.loading" ></mat-spinner>
     <input id="pesquisa-input" matInput type="text" 
     [(ngModel)]="value" (input)="search($event)" placeholder="Pesquisar">
-      
+
 </div>
 
 <div class="mon">
   <b>MONITORAÇÃO</b>
 </div>
+<mat-spinner class="load" *ngIf="this.loading" ></mat-spinner>
+<ng-template  ngFor let-temp [ngForOf]="getAllTemp"  >
 
-<ng-template  ngFor let-temp [ngForOf]="getAllTemp" >
-<div id="conj-card" *ngIf="temp.temp >= 30 && temp.hora < 180">  
+<div     id="conj-card" *ngIf="temp.temp >= 30 && temp.hora < 180">  
 
-  <mat-card   class="setor-card"> 
+  <mat-card  class="setor-card"> 
 
       <mat-card-title><h1>{{temp.nome}}</h1></mat-card-title>
       
@@ -22,7 +24,7 @@
           <h4 class="h3"><b>{{temp.hora}} - </b> <b>{{temp.condicao}} </b></h4>
       </mat-card-content>
   </mat-card>
- 
+
   </div>
 
   <div id="conj-card" *ngIf="temp.temp <= 15 && temp.hora < 180">  

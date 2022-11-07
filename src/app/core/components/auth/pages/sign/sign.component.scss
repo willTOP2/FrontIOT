@@ -30,7 +30,7 @@
 .body{
 
     height: 100vh; 
-    background: url("../../../../../../assets/img/TCS.png");
+   background: url("../../../../../../assets/img/fundo-login.png");
     background-size: cover; 
     display: flex; 
     justify-content: center; 
@@ -48,6 +48,12 @@ img{
     align-items: center;
 
 }
+/* Tata_Consultancy_Services_Logo 1 */
+
+
+
+
+
 
 
 .form{
@@ -61,11 +67,14 @@ img{
 
 
 p{
+ 
     padding-top: 10px;
     color:black; 
     font-size: 14px;  
     align-items: center; 
-     font-family: "Roboto", sans-serif; ;
+    font-family: 'Itim';
+    font-style: normal; 
+    line-height: 29px;
 }
 
 .label{

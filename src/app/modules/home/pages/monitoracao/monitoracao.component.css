@@ -45,7 +45,20 @@ mat-card-subtitle{
     border-bottom: solid #fff;
 }
 
+.load{
+    position: fixed; 
+    color: blue;
+    height: 100%; 
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    top:500px; 
+    left:500px; 
 
+   
+
+}
 
 /*min-height: 10em;
 display: table-cell;
