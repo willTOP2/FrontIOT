@@ -1,0 +1,36 @@
+<app-header  [title]="nomeTitle"    ></app-header> 
+<mat-card class="box-geral">
+ 
+
+    <table class="table " >
+     
+        <thead >
+    
+         <tr class="header">
+      
+           <th >Hora </th>
+        
+           <th >Temperatura  <mat-icon>filter_list</mat-icon></th>
+         </tr>
+        </thead><br> 
+     
+    <tbody class="body">
+      <ng-template ngFor let-temp [ngForOf]="setSort | orderBy: 'condicao' : true" >
+     <tr  >  
+ 
+  
+      <td>{{temp.hora.S}}</td>
+      <td>{{temp.temperatura.S}}º</td> 
+      <td>{{temp.dia.S | date: 'dd/MM'}}</td>
+      </ng-template>
+
+     
+      
+    </tbody>
+ </table>
+</mat-card>
+ 
+  <h1>
+
+  </h1>
+  
