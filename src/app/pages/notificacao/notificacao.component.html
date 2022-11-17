@@ -1,42 +1,41 @@
-<app-header  [title]="nomeTitle"    ></app-header> 
-
-  <div id="area-input">
-  
-    <input id="pesquisa-input" matInput type="text" 
-    [(ngModel)]="value" (input)="search($event)"  placeholder="Pesquisar">
-        
-  
-  </div>
+<app-header  [title]="nomeTitle"></app-header> 
+  <br><br>
   <div class="main">
   <mat-card>
   <table class="table " >
     
     <thead >
      <tr class="header">
-       <th >Nome </th>
-       <th >Condição </th>
-       <th (click)="sort('temp')">Temperatura  <mat-icon>filter_list</mat-icon></th>
+      <th>Sensor</th>
+      <th (click)="sort('temp')">Temperatura  <mat-icon>filter_list</mat-icon></th>
+       <th >Data </th>
+       <th> Hora</th>
      </tr>
     </thead><br>
 
     <tbody class="body">
-     <tr *ngFor="let product of getAllTemp | orderBy: orderHeader: isDescOrder" >  
-      <ng-container *ngIf="product.condicao == 'Verificar'">
+     <tr  >  
+      <ng-template [ngIf]="setSort.temperatura.S > 33 || setSort.temperatura.S <16 ">
      
       <ng-container>
-      <td>{{product.nome}}</td>
+      <td>{{setSort.id.S}}</td>
      </ng-container>
 
      <ng-container>
-       <td>{{product.condicao}}</td>
+       <td>{{setSort.temperatura.S }}</td>
       </ng-container>
+      
+      <ng-container>
+        <td>{{setSort.dia.S | date : 'dd/M' }}</td>
+       </ng-container>
+ 
 
       <ng-container>
-       <td>{{product.temp}}</td>      
+       <td>{{setSort.hora.S}}</td>      
       </ng-container>
       
-      </ng-container>
-      
+
+      </ng-template>
     </tbody>
  </table>
 </mat-card>

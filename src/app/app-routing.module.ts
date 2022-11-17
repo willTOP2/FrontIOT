@@ -2,6 +2,7 @@
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
+import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { HistoricoComponent } from './pages/historico/historico.component';
 import { LoginComponent } from './pages/login/login.component';
 
@@ -32,6 +33,9 @@ const routes: Routes = [{
   component: HistoricoComponent, 
   //canActivate: [AuthGuard],
   //canLoad: [AuthGuard]
+},{
+  path:"cadastro",
+  component: CadastroComponent,
 }];
 
 @NgModule({

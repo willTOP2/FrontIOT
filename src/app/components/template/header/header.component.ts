@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
 
 
   @Input()  public title: string = "Temperature Monitoring"
-  
+  @Input()  public titleId: any
 
   constructor() { 
    

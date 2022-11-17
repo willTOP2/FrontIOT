@@ -24,7 +24,7 @@ export class MonitoracaoComponent implements OnInit {
 
   public getAllTemp : any 
   
-public loading= true
+  public loading= true
   public setAllTemp :any  
   hoje: Date = new Date();
   public setSorttemp:any

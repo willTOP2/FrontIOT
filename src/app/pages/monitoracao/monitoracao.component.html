@@ -1,21 +1,12 @@
 
 <app-header></app-header>
-
+<br>
 <mat-card class="box-geral">
-
-<div id="area-input">
-
-    <input id="pesquisa-input" matInput type="text" 
-  #input (keyup)="getSearch(input.value)" placeholder="Pesquisar">
-      
-</div>
-
-
 
 <ng-template id="conj-card"  [ngIf]="getAllTemp.temperatura.S > 32  ">  
 <div id="conj-card">
   <mat-card   class="setor-card"> 
-    <mat-card-title><h1><b>Cozinha</b></h1></mat-card-title>   
+    <mat-card-title><h1><b>{{getAllTemp.id.S}}</b></h1></mat-card-title>   
         
       <mat-card-content style="color: #ff0000">
    
@@ -29,48 +20,66 @@
 </div>
 </ng-template>
 
-  <div id="conj-card" *ngIf="getAllTemp.temperatura.S <= 15 ">  
+<ng-template  id="conj-card" [ngIf]="getAllTemp.temperatura.S <16  ">  
+  <div id="conj-card" >  
 
     <mat-card   class="setor-card"> 
-  
-        <mat-card-title><h1><b></b></h1></mat-card-title>
+      <mat-card-title><h1><b>{{getAllTemp.id.S}}</b></h1></mat-card-title>   
+        
         
         <mat-card-content style="color: #00ffff">
             <h1 class="teste"><b>{{getAllTemp.temperatura.S}}º <a routerLink="historico/{{getAllTemp.id.S}}"><mat-icon style="color: white">search</mat-icon></a></b></h1>
-            <h4 class="h3"><b>{{getAllTemp.hora.S}} - </b> <b> </b></h4>
+            <h4 class="h"><b>{{getAllTemp.dia.S | date: 'dd/M'}}  </b> - <b>{{getAllTemp.hora.S }} </b></h4>
+            <p> Temperatura Baixa </p>
         </mat-card-content>
     </mat-card>
    
 </div>
-
-<div id="conj-card" *ngIf="setSort.temperatura.S <= 15 ">  
-
-  <mat-card   class="setor-card"> 
-
-      <mat-card-title><h1><b>Datacenter</b></h1></mat-card-title>
-      
-      <mat-card-content style="color: #00ffff">
-          <h1 class="teste"><b>{{setSort.temperatura.S}}º <a routerLink="historico/{{setSort.id.S}}"><mat-icon style="color: white">search</mat-icon></a></b></h1>
-         
-          <h4> <b>{{setSort.dia.S | date: 'dd/M'}} </b> - <b>{{setSort.hora.S }} </b></h4>
-          <p>Temperatura Baixa</p>
-      </mat-card-content>
-  </mat-card>
- 
-</div>
-
+</ng-template>
 
 <div id="conj-card" *ngIf="setSort.temperatura.S > 16 && setSort.temperatura.S < 32 ">  
 
   <mat-card   class="setor-card"> 
 
-      <mat-card-title><h1><b>Datacenter</b></h1></mat-card-title>
+      <mat-card-title><h1><b>{{setSort.id.S}}</b></h1></mat-card-title>
       
-      <mat-card-content style="color: palevioletred">
+      <mat-card-content style="color: rgb(0, 255, 34)">
           <h1 class="teste"><b>{{setSort.temperatura.S}}º <a routerLink="historico/{{setSort.id.S}}"><mat-icon style="color: white">search</mat-icon></a></b></h1>
          
           <h4> <b>{{setSort.dia.S | date: 'dd/M'}} </b> - <b>{{setSort.hora.S }} </b></h4>
-        
+          <p> Temperatura Normal </p>
+      </mat-card-content>
+  </mat-card>
+
+</div>
+
+<div id="conj-card" *ngIf="setSort.temperatura.S < 16  ">  
+
+  <mat-card   class="setor-card"> 
+
+      <mat-card-title><h1><b>{{setSort.id.S}}</b></h1></mat-card-title>
+      
+      <mat-card-content style="color: rgb(0, 255, 34)">
+          <h1 class="teste"><b>{{setSort.temperatura.S}}º <a routerLink="historico/{{setSort.id.S}}"><mat-icon style="color: white">search</mat-icon></a></b></h1>
+         
+          <h4> <b>{{setSort.dia.S | date: 'dd/M'}} </b> - <b>{{setSort.hora.S }} </b></h4>
+          <p> Temperatura baixa </p>
+      </mat-card-content>
+  </mat-card>
+
+</div>
+
+<div id="conj-card" *ngIf="setSort.temperatura.S >  32 ">  
+
+  <mat-card   class="setor-card"> 
+
+      <mat-card-title><h1><b>{{setSort.id.S}}</b></h1></mat-card-title>
+      
+      <mat-card-content style="color: red">
+          <h1 class="teste"><b>{{setSort.temperatura.S}}º <a routerLink="historico/{{setSort.id.S}}"><mat-icon style="color: white">search</mat-icon></a></b></h1>
+         
+          <h4> <b>{{setSort.dia.S | date: 'dd/M'}} </b> - <b>{{setSort.hora.S }} </b></h4>
+          <p> Temperatura Normal </p>
       </mat-card-content>
   </mat-card>
 

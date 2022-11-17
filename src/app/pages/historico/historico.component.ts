@@ -17,7 +17,8 @@ export class HistoricoComponent implements OnInit {
 
   public getAllTempo : any
   public setAllTempo : any
-   public nomeTitle: string = "Historic of Local"
+   public nomeTitle: string = "Historic of Local" 
+   public nome= "ii"
   public setAllTemp :any 
 
    public url: string ='https://26fuifhi25.execute-api.us-east-1.amazonaws.com/test/'
@@ -27,40 +28,17 @@ export class HistoricoComponent implements OnInit {
 
   ngOnInit(): void {
     const id =  this.route.snapshot.params['id'];
+    this.nome= id
     this.iotService.apiGetIDTemp(`${this.url}/${id}`) 
-      
+    
    .subscribe(
        res => {
 
-        function compare(a: any,b: any) {
-          if (a.hora.S < b.hora.S  )
-         
-             return -1;
-          
-          if (a.hora.S > b.hora.S )
-      
-            return 1;
-          
-          return 0;
-        }
-    
-        function compare1(a: any,b: any) {
-          if (a.dia.S < b.dia.S )
-         
-             return -1;
-          
-          if (a.dia.S > b.dia.S )
-      
-            return 1;
-          
-          return 0;
-        }
+        
      
-        this.setAllTempo = res.Items.sort(compare)
-        this.getAllTempo = this.setAllTempo 
-        this.setSorttemp = this.getAllTempo.sort(compare1) 
-        this.setSort = this.setSorttemp
-        console.log(this.setSort)
+        this.setAllTempo = res.Items
+    
+       
 
        } 
      );

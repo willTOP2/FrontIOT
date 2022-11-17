@@ -41,6 +41,9 @@ import { OrderModule } from 'ngx-order-pipe';
 import { LocalDateTimePipe } from './pipe/local-date-time.pipe';
 import { HistoricoComponent } from './pages/historico/historico.component';
 import { InputComponent } from './shared/input/input.component';
+import { CadastroComponent } from './pages/cadastro/cadastro.component';
+import { OrdernarPipe } from './pipe/ordernar.pipe';
+import { PrimeiroIndiceArraySortPipe } from './pipe/primeiro-indice-array-sort.pipe';
 
 
 
@@ -55,7 +58,7 @@ import { InputComponent } from './shared/input/input.component';
 
     LoginComponent, 
     MonitoracaoComponent, 
-    NotificacaoComponent, LocalDateTimePipe, HistoricoComponent, InputComponent, 
+    NotificacaoComponent, LocalDateTimePipe, HistoricoComponent, InputComponent, CadastroComponent, OrdernarPipe, PrimeiroIndiceArraySortPipe, 
  
     
   ],

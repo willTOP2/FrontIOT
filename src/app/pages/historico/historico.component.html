@@ -1,27 +1,27 @@
-<app-header  [title]="nomeTitle"    ></app-header> 
+<app-header  [title]="nomeTitle"></app-header> 
+
 <mat-card class="box-geral">
  
 
-    <table class="table " >
-     
-        <thead >
-    
-         <tr class="header">
-      
-           <th >Hora </th>
-        
-           <th >Temperatura  <mat-icon>filter_list</mat-icon></th>
+    <table class="table " >     
+        <thead >    
+         <tr class="header">   
+                     
+           <th>Temperatura  <mat-icon>filter_list</mat-icon></th>
+           <th> Data </th>
+           <th>Hora </th>
          </tr>
-        </thead><br> 
+        </thead>
+        <br> 
      
     <tbody class="body">
-      <ng-template ngFor let-temp [ngForOf]="setSort | orderBy: 'condicao' : true" >
-     <tr  >  
- 
-  
-      <td>{{temp.hora.S}}</td>
-      <td>{{temp.temperatura.S}}º</td> 
+      <ng-template ngFor let-temp [ngForOf]="setAllTempo | ordernar | orderBy: 'condicao' : true" >
+     <tr>  
+    
+      <td>{{temp.temperatura.S}}º</td>       
       <td>{{temp.dia.S | date: 'dd/MM'}}</td>
+      <td>{{temp.hora.S}}</td>
+     </tr>
       </ng-template>
 
      

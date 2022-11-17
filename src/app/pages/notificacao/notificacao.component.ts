@@ -21,7 +21,10 @@ export class NotificacaoComponent implements OnInit {
   public nomeTitle:string = "Notifications"
   
   public getAllTemp : any;  
-  public setAllTemp :any;
+  public setAllTemp :any; 
+
+  public setSort: any 
+  public setSorttemp: any
 
   sort(headerName:string){
     this.isDescOrder = !this.isDescOrder;
@@ -32,13 +35,49 @@ export class NotificacaoComponent implements OnInit {
   constructor(private iotService: IotApiService) { }
 
   ngOnInit(): void {
-    this.iotService.apiAll().subscribe(
+   
+ 
+    function compare(a: any,b: any) {
+      if (a.hora.S > b.hora.S  )
+     
+         return -1;
+      
+      if (a.hora.S < b.hora.S )
+  
+        return 1;
+      
+      return 0;
+    }
+
+    function compare1(a: any,b: any) {
+      if (a.dia.S > b.dia.S )
+     
+         return -1;
+      
+      if (a.dia.S < b.dia.S )
+  
+        return 1;
+      
+      return 0;
+    }
+
+    var  i =0 
+ 
+  this.iotService.apiA02('A02')  
+    .subscribe(
       res=> {
-       this.setAllTemp = res; 
-       this.getAllTemp = this.setAllTemp
-      }
-        
-      );
+      
+         this.setAllTemp = res.Items
+         this.getAllTemp = this.setAllTemp 
+         this.setSorttemp = this.getAllTemp.sort(compare1) 
+         this.setSort = this.setSorttemp.shift()
+         console.log(this.setSort)
+      
+         i++ 
+         console.log(i)
+       
+      })  
+    
 
       
 

@@ -1,0 +1,31 @@
+
+
+.box-geral{   
+    margin: 15px;
+    border-radius: 20px;
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;      
+}
+
+
+.example-form{
+    align-items: center; 
+    justify-content: center; 
+    margin: 25px;
+}
+
+.box-cadastro{
+    display:flex;
+    border-radius: 20px;
+    height: 250px;
+    width: 350px;   
+    box-shadow: 5px 5px 5px black;  
+  
+}
+
+
+
+
+
+

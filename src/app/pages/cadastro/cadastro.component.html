@@ -1,0 +1,35 @@
+<app-header></app-header>
+<br>
+<mat-card class="box-geral">
+
+    <mat-card-content class="box-cadastro">
+
+       
+        <mat-card style="background-color: rgba(93, 93, 93, 0.661) ;">
+        <form  #form="ngForm" class="example-form">
+            <mat-form-field class="access" >
+              <mat-label><b>Access Point</b> </mat-label><br>
+              <input style="background-color: white;" matInput placeholder="" value="">
+            </mat-form-field>
+          
+            <mat-form-field class="password">
+              <mat-label><b>Password</b></mat-label><br>
+              <input style="background-color: white;" matInput placeholder="" value="s" name="passwords" ngModel>
+           </mat-form-field>
+        </form>
+        {{form.value |json}}
+        <form class="example-form">
+            <label for="device">Select the Device</label><br>
+            <input name="device" id="device" list="devices">
+           </form>
+
+           <datalist id="devices">
+            <option>A01</option>
+            <option>A02</option>            
+           </datalist>
+        </mat-card>
+    
+    </mat-card-content>    
+   
+</mat-card >
+
